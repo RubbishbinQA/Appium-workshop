@@ -11,7 +11,7 @@ Repositorio con el código y las instrucciones para para la ejecución de las pr
 
 - Instalar IntelliJ IDEA [Descargar community edition y con la version de tu OS](https://www.jetbrains.com/idea/download/#section=windows) 
 
-- Instalar desntro de IntelliJ IDEA los plugins de TestNG
+- Instalar dentro de IntelliJ IDEA el plugin de TestNG
 
 - Crear un AVD (Android Virtual Device), emulador que correra la prueba [Guia del sitio oficial](https://developer.android.com/studio/run/managing-avds?hl=es-419)
 
