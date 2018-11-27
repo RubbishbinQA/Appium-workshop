@@ -17,3 +17,23 @@ Repositorio con el código y las instrucciones para para la ejecución de las pr
 
 - Crear un AVD (Android Virtual Device), emulador que correra la prueba [Guia del sitio oficial](https://developer.android.com/studio/run/managing-avds?hl=es-419)
 
+JSON App settings para la ejecucion del inspector de la apk
+
+```javascript
+{
+  "deviceName": "Nexus_One_API_24",
+  "udid": "emulator-5554",
+  "platformName": "Android",
+  "platformVersion": "7.0",
+  "appPackage": "com.soundcloud.android",
+  "appActivity": "com.soundcloud.android.main.MainActivity"
+}
+```
+
+### Videos Appium Conference
+
+Docker - Android: https://www.youtube.com/watch?v=pQdpjuYwvp8 
+
+Repositorio del video: https://github.com/butomo1989/docker-android
+
+Presentación del meetup: https://drive.google.com/open?id=1-6Kpgtss9CU-LONr-DjTVglbWQO-1Ni5
