@@ -1,6 +1,7 @@
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.MobileBy;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -12,8 +13,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
 
-public class SampleTest {
+public class TestAI {
 
     public AppiumDriver<MobileElement> driver;
     public WebDriverWait wait;
@@ -29,6 +31,13 @@ public class SampleTest {
         caps.setCapability("appPackage", "com.soundcloud.android");
         caps.setCapability("appActivity","com.soundcloud.android.main.MainActivity");
         caps.setCapability("noReset","false");
+
+        HashMap<String, String> customFindModules = new HashMap<String, String>();
+        customFindModules.put("ai", "test-ai-classifier");
+
+        caps.setCapability("customFindModules", customFindModules);
+        caps.setCapability("shouldUseCompactResponses", false);
+
         driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"),caps);
         wait = new WebDriverWait(driver, 25);
     }
@@ -36,11 +45,15 @@ public class SampleTest {
     @Test
     public void basicTest () {
 
+        By search = MobileBy.custom("search");
+        By home   = MobileBy.custom("home");
 
-        String search = "//android.widget.FrameLayout[@content-desc=\"Search\"]";
-
-        wait.until(ExpectedConditions.visibilityOfElementLocated
-                (By.xpath(search))).click();
+        driver.findElement(home).click();
+        driver.findElement(search).click();
+        driver.findElement(home).click();
+        driver.findElement(search).click();
+        driver.findElement(home).click();
+        driver.findElement(search).click();
 
         wait.until(ExpectedConditions.visibilityOfElementLocated
                 (By.id("com.soundcloud.android:id/search_edit_text"))).sendKeys("Dj Snake "+"\n");
